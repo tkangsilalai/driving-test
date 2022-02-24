@@ -36,7 +36,7 @@ const HomeScreen = () => {
     setIsAnswered(true);
     if (
       questions[index].split(",")[6].split(" ").join("") ===
-      answer.split(" ").join("")
+      answer.split("$")[0].split(" ").join("")
     ) {
       setIsCorrect(true);
     } else {
@@ -66,7 +66,28 @@ const HomeScreen = () => {
               }
               disabled={isAnswered}
             >
-              {questions[index].split(",")[2].replace('"', "")}
+              {questions[index].split(",")[2].replace('"', "").split("$")
+                .length > 1 ? (
+                <>
+                  {
+                    questions[index]
+                      .split(",")[2]
+                      .replace('"', "")
+                      .split("$")[0]
+                  }
+                  <img
+                    src={
+                      questions[index]
+                        .split(",")[2]
+                        .replace('"', "")
+                        .split("$")[1]
+                    }
+                    alt=""
+                  />
+                </>
+              ) : (
+                questions[index].split(",")[2].replace('"', "")
+              )}
             </Button>
             <Button
               className={classes.text}
@@ -78,7 +99,28 @@ const HomeScreen = () => {
               }
               disabled={isAnswered}
             >
-              {questions[index].split(",")[3].replace('"', "")}
+              {questions[index].split(",")[3].replace('"', "").split("$")
+                .length > 1 ? (
+                <>
+                  {
+                    questions[index]
+                      .split(",")[3]
+                      .replace('"', "")
+                      .split("$")[0]
+                  }
+                  <img
+                    src={
+                      questions[index]
+                        .split(",")[3]
+                        .replace('"', "")
+                        .split("$")[1]
+                    }
+                    alt=""
+                  />
+                </>
+              ) : (
+                questions[index].split(",")[3].replace('"', "")
+              )}
             </Button>
             <Button
               className={classes.text}
@@ -90,7 +132,28 @@ const HomeScreen = () => {
               }
               disabled={isAnswered}
             >
-              {questions[index].split(",")[4].replace('"', "")}
+              {questions[index].split(",")[4].replace('"', "").split("$")
+                .length > 1 ? (
+                <>
+                  {
+                    questions[index]
+                      .split(",")[4]
+                      .replace('"', "")
+                      .split("$")[0]
+                  }
+                  <img
+                    src={
+                      questions[index]
+                        .split(",")[4]
+                        .replace('"', "")
+                        .split("$")[1]
+                    }
+                    alt=""
+                  />
+                </>
+              ) : (
+                questions[index].split(",")[4].replace('"', "")
+              )}
             </Button>
             <Button
               className={classes.text}
@@ -102,7 +165,28 @@ const HomeScreen = () => {
               }
               disabled={isAnswered}
             >
-              {questions[index].split(",")[5].replace('"', "")}
+              {questions[index].split(",")[5].replace('"', "").split("$")
+                .length > 1 ? (
+                <>
+                  {
+                    questions[index]
+                      .split(",")[5]
+                      .replace('"', "")
+                      .split("$")[0]
+                  }
+                  <img
+                    src={
+                      questions[index]
+                        .split(",")[5]
+                        .replace('"', "")
+                        .split("$")[1]
+                    }
+                    alt=""
+                  />
+                </>
+              ) : (
+                questions[index].split(",")[5].replace('"', "")
+              )}
             </Button>
           </div>
           {isAnswered &&
