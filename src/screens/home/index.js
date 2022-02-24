@@ -51,7 +51,9 @@ const HomeScreen = () => {
           <Typography variant="h1" className={classes.title}>
             {questions[index].split(",")[0]}
           </Typography>
-          <img src={questions[index].split(",")[1]} alt="" />
+          {questions[index].split(",")[1] !== "" && (
+            <img src={questions[index].split(",")[1]} alt="" />
+          )}
 
           <div style={{ width: "80%" }}>
             <Button
